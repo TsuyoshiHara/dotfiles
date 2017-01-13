@@ -53,7 +53,7 @@ if has('vim_starting')
 endif
 
 call plug#begin('~/.vim/plugged')
-    " 
+    "
     Plug 'junegunn/seoul256.vim'
 
     Plug 'junegunn/vim-plug',
@@ -123,7 +123,10 @@ let g:lightline = {
 "      \}
 
 " set keymap nerdtree
-    nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+" show hidden files in nerd tree
+let NERDTreeShowHidden = 1
 
 " show hidden files
 let NERDTreeShowHidden=1
