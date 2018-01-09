@@ -94,12 +94,20 @@ call plug#begin('~/.vim/plugged')
 
     " Html autocomplete
     Plug 'alvan/vim-closetag'
+
+    " japanesque-color-scheme
+    Plug 'aereal/vim-colors-japanesque'
+
+    " ctrlpvim
+    Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 set laststatus=2
 
+set t_Co=256
 "colo seoul256
 colo hybrid
+"colo japanesque
 set background=dark
 "let g:seoul256_background = 236
 
