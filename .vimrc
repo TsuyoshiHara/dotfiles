@@ -151,5 +151,8 @@ nmap ga <Plug>(EasyAlign)
 let g:indentLine_char = 'c'
 
 " タブ、空白、改行の可視化
-set list
-set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
+" set list
+" set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
+
+set backupcopy=yes
+
