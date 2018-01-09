@@ -28,6 +28,10 @@ set smartcase
 " 検索時に最後まで行ったら最初に戻る
 set wrapscan
 
+" 行・列のハイライト
+set cursorline
+set cursorcolumn
+
 " バックスペースでインデントや改行を削除できるようにする
 set backspace=indent,eol,start
 
