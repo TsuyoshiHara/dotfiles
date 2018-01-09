@@ -30,12 +30,19 @@ prompt_nadeshiko_setup () {
   zstyle ':vcs_info:git:*' formats '(%b%c%u)'
   zstyle ':vcs_info:git:*' actionformats " %b%c%u|%F{cyan}%a%f"
 
-  PROMPT="%K{black}%F{red} %n@%m%f%F{blue} %~ %f%b"
-  PROMPT=$PROMPT'%K{black}${vcs_info_msg_0_} %k'
-  PROMPT=$PROMPT'%K{black}%F{yellow}%D{%H:%M:%S} %f%k'
-  PROMPT=$PROMPT$prompt_newline'%F{magenta}$ %f'
+  # PROMPT="%K{black}%F{red} %n@%m%f%F{blue} %~ %f%b"
+  # PROMPT=$PROMPT'%K{black}${vcs_info_msg_0_} %k'
+  # PROMPT=$PROMPT'%K{black}%F{yellow}%D{%H:%M:%S} %f%k'
+  # PROMPT=$PROMPT$prompt_newline'%F{magenta}$ %f'
 
-  RPROMPT=''
+  PROMPT="%K{black}%F{red} %n@%m%f%F{blue} %~ %f%b"
+  PROMPT=$PROMPT'%K{black}%F{yellow}%D{%H:%M:%S} %f%k'
+  # PROMPT=$PROMPT'%K{black}${vcs_info_msg_0_} %k'
+  # PROMPT=$PROMPT$prompt_newline'%F{magenta}$ %f'
+  PROMPT=$PROMPT$prompt_newline'%(?.%F{magenta}.%F{red})$ %f'
+
+  # RPROMPT='%K{black} ${vcs_info_msg_0_} %k'
+  RPROMPT='${vcs_info_msg_0_}'
 }
 
 prompt_nadeshiko_preview () {
