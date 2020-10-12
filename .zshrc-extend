@@ -58,3 +58,6 @@ function four-panes() {
 alias newpr='new_pr'
 alias openpr='new_pr'
 alias ls='exa'
+
+export PATH=$PATH:$HOME/dotfiles/bin
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+puts "Enter old pr commit url: "
+old_url = gets.chomp!
+puts "Enter new pr commit url: "
+new_url = gets.chomp!
+
+regexp = /https:\/\/github.com\/(?<org>[a-zA-Z0-9-]+)\/(?<repo>[a-zA-Z0-9-]+)\/pull\/(?<pr_num>[0-9]+)\/commits\/(?<hash>[a-zA-Z0-9]+)/
+
+matches1 = old_url.match(regexp)
+matches2 = new_url.match(regexp)
+
+exit(1) if matches1["org"] != matches2["org"] || matches1["repo"] != matches2["repo"] || matches1["pr_num"] != matches2["pr_num"]
+
+org = matches1["org"]
+repo = matches1["repo"]
+pr_num = matches1["pr_num"]
+old_hash = matches1["hash"]
+new_hash = matches2["hash"]
+
+result = "https://github.com/#{org}/#{repo}/pull/#{pr_num}/files/#{old_hash}..#{new_hash}"
+
+puts result
+
+system("open #{result}")
+
